@@ -1,16 +1,16 @@
-package data
+package main
 
 import "time"
 
 type Product struct {
-	ID          int
-	Name        string
-	Description string
-	Price       float64
-	SKU         string
-	CreatedOn   string
-	UpdatedOn   string
-	DeletedOn   string
+	ID          int     `json:"id"`
+	Name        string  `json:"name`
+	Description string  `json:"description"`
+	Price       float64 `json:"price"`
+	SKU         string  `json:"sku"`
+	CreatedOn   string  `json:"-"`
+	UpdatedOn   string  `json:"-"`
+	DeletedOn   string  `json:"_"`
 }
 
 func GetProducts() []*Product {
@@ -26,7 +26,6 @@ var productList = []*Product{
 		SKU:         "SKU1",
 		CreatedOn:   time.Now().UTC().String(),
 		UpdatedOn:   time.Now().UTC().String(),
-		DeletedOn:   time.Now().UTC().String(),
 	},
 	&Product{
 		ID:          2,
@@ -36,6 +35,9 @@ var productList = []*Product{
 		SKU:         "SKU2",
 		CreatedOn:   time.Now().UTC().String(),
 		UpdatedOn:   time.Now().UTC().String(),
-		DeletedOn:   time.Now().UTC().String(),
 	},
+}
+
+func main() {
+
 }
